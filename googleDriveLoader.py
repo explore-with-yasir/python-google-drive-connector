@@ -458,11 +458,11 @@ class GoogleDriveLoader(BaseLoader, BaseModel):
         from google.oauth2 import service_account
         from googleapiclient.discovery import build
         # Read the service account JSON file once during application initialization
-        credentials_file = '/Volumes/MacintoshData/ParadigmNetworks-ai/corporate-data-repository/service_account.json'  # Replace with your JSON file path
+        credentials_file = '<PATH>/service_account.json'  # Replace with your JSON file path
         service_account_json = open(credentials_file, 'r').read()
 
         credentials = service_account.Credentials.from_service_account_file(
-            '/Volumes/MacintoshData/ParadigmNetworks-ai/corporate-data-repository/service_account.json')
+            '<PATH>/service_account.json')
 
         credentials = credentials.with_scopes(
             ['https://www.googleapis.com/auth/drive.metadata.readonly', 'https://www.googleapis.com/auth/drive'])
